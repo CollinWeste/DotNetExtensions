@@ -1,51 +1,50 @@
-﻿
-using DotNetExtensions.Csv;
+﻿using DotNetExtensions.Csv;
 using NUnit.Framework;
 using System;
 
 namespace DotNetExtensions.Test.Csv
 {
-  [TestFixture]
-  public class CsvExtensionsTests
-  {
-    #region ParseCsv
-
-    [Test]
-    public void ParseCsv_NullSource_ThrowsException()
+    [TestFixture]
+    public class CsvExtensionsTests
     {
-      // Arrange
-      string uut = null;
+        #region ParseCsv
 
-      // Act - Assert
-      Assert.Multiple(() =>
-      {
-        Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Normal, null));
-        Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Strict, null));
+        [Test]
+        public void ParseCsv_NullSource_ThrowsException()
+        {
+            // Arrange
+            string uut = null;
 
-        Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Normal, selector: x => x));
-        Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Strict, selector: x => x));
-      });
+            // Act - Assert
+            Assert.Multiple(() =>
+            {
+                Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Normal, null));
+                Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Strict, null));
+
+                Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Normal, selector: x => x));
+                Assert.Throws<ArgumentNullException>(() => uut.ParseCsv(CsvFormat.Strict, selector: x => x));
+            });
+        }
+
+        [TestCase("")]
+        [TestCase("asdf")]
+        [TestCase("test,string")]
+        public void ParseCsv_NonNullSource_DoesNotThrow(string testString)
+        {
+            // Arrange
+            string uut = testString;
+
+            // Act - Assert
+            Assert.Multiple(() =>
+            {
+                Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Normal, null));
+                Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Strict, null));
+
+                Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Normal, selector: x => x));
+                Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Strict, selector: x => x));
+            });
+        }
+
+        #endregion
     }
-
-    [TestCase("")]
-    [TestCase("asdf")]
-    [TestCase("test,string")]
-    public void ParseCsv_NonNullSource_DoesNotThrow(string testString)
-    {
-      // Arrange
-      string uut = testString;
-
-      // Act - Assert
-      Assert.Multiple(() =>
-      {
-        Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Normal, null));
-        Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Strict, null));
-
-        Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Normal, selector: x => x));
-        Assert.DoesNotThrow(() => uut.ParseCsv(CsvFormat.Strict, selector: x => x));
-      });
-    }
-
-    #endregion
-  }
 }

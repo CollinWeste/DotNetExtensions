@@ -5,7 +5,7 @@ using System;
 namespace DotNetExtensions.Test.Csv
 {
     [TestFixture]
-    public class CsvExtensionsTests
+    public class ParseCsvTests
     {
         #region ParseCsv
 

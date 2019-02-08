@@ -3,7 +3,7 @@
 namespace DotNetExtensions.IEnumerable
 {
     /// <summary>
-    /// Contains extension methods for the <c>System.Collections.Generic.IEnumerable&lt;T&gt;</c> interface
+    /// Contains extension methods for the <see cref="System.Collections.Generic.IEnumerable{T}"/> interface
     /// </summary>
     /// <see cref="System.Collections.Generic.IEnumerable{T}"/>
     public static partial class IEnumerableExtensions

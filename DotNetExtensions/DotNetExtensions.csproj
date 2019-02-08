@@ -47,6 +47,8 @@
     <Compile Include="IEnumerable\IsEmpty.cs" />
     <Compile Include="IEnumerable\IsNullEmpty.cs" />
     <Compile Include="IEnumerable\RemoveEnd.cs" />
+    <Compile Include="Object\CastAs.cs" />
+    <Compile Include="Object\ConvertTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Csv\ParseCsv.cs" />
   </ItemGroup>

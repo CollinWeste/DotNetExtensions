@@ -9,7 +9,7 @@ namespace DotNetExtensions.Csv
     /// Contains Csv extension methods
     /// </summary>
     /// <seealso cref="CsvFormat"/>
-    public static class CsvExtensions
+    public static partial class CsvExtensions
     {
         /// <summary>
         /// Regex to split strings for <see cref="CsvFormat.Normal"/> format.

@@ -8,8 +8,12 @@
     {
         /// <summary>
         /// Entries are quoted if they contain spaces or commas to 
-        /// retain csv structure.
+        /// retain csv structure. Does not support nested quotes.
         /// </summary>
+        /// <remarks>
+        /// When parsing, will remove quotes from quoted strings.
+        /// Quotes are added back when the enumerable is converted back.
+        /// </remarks>
         Normal,
 
         /// <summary>

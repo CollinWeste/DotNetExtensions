@@ -59,8 +59,20 @@ namespace DotNetExtensions.Csv
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="source"/> is null.</exception>
         public static IEnumerable<T> ParseCsv<T>(this string source, CsvFormat format = CsvFormat.Normal, Func<string, T> selector = null)
         {
+            if (source == null) { throw new ArgumentNullException(nameof(source)); }
+            if (string.IsNullOrEmpty(source)) { return new T[0]; }
+
             selector = selector ?? ((entry) => (T)Convert.ChangeType(entry, typeof(T)));
-            var splits = Regex.Split(source, RegexByFormat[format]);
+            var splits = Regex.Matches(source, RegexByFormat[format])
+                .OfType<Match>()
+                .Select(x => x.Groups.OfType<Group>().ElementAt(2).Value);
+
+            // For some reason, Regex.Matches doesn't catch the double-comma at the beginning
+            // of strings. For this case, we need to explicitly add one.
+            if (source.StartsWith(",,"))
+            {
+                splits = new[] { string.Empty }.Concat(splits);
+            }
 
             return splits.Select(selector);
         }

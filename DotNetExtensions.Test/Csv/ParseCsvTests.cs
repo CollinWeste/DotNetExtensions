@@ -5,7 +5,7 @@ using System;
 namespace DotNetExtensions.Test.Csv
 {
     [TestFixture]
-    public class ParseCsvTests
+    internal class ParseCsvTests
     {
         [Test]
         public void ParseCsv_NullSource_ThrowsException()

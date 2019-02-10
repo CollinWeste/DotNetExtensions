@@ -63,7 +63,10 @@
     <Compile Include="Csv\ParseCsvTests.cs" />
     <Compile Include="IEnumerable\CompareTests.cs" />
     <Compile Include="IEnumerable\ForEachTests.cs" />
+    <Compile Include="IEnumerable\IsEmptyTests.cs" />
+    <Compile Include="IEnumerable\IsNullEmptyTests.cs" />
     <Compile Include="IEnumerable\RemoveFromEndTests.cs" />
+    <Compile Include="Object\AsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

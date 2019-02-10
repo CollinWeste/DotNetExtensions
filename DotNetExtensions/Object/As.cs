@@ -8,12 +8,12 @@
     {
         /// <summary>
         /// Converts the object to the specified type <typeparamref name="T"/>
-        /// using the as keyword.
+        /// using the <c>as</c> keyword.
         /// </summary>
         /// <typeparam name="T">The target type.</typeparam>
         /// <param name="obj">The object to cast.</param>
         /// <returns>The casted object, if successful; else null.</returns>
-        public static T CastAs<T>(this object obj) where T : class
+        public static T As<T>(this object obj) where T : class
         {
             return obj as T;
         }

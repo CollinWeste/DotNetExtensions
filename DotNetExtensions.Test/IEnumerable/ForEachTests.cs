@@ -40,5 +40,29 @@ namespace DotNetExtensions.Test.IEnumerable
             // Act - Assert
             Assert.DoesNotThrow(() => source.ForEach(action));
         }
+
+        [Test]
+        public void ForEach_ValidArgs_DoesActionForEveryItem()
+        {
+            // Arrange
+            var itemsFound = new List<string>();
+            var source = new List<string>()
+            {
+                "This",
+                "is",
+                "a",
+                "test"
+            };
+
+            Action<string> action = (item) => itemsFound.Add(item);
+
+            Assume.That(itemsFound, Is.Not.EqualTo(source));
+
+            // Act
+            source.ForEach(action);
+
+            // Assert
+            Assert.That(itemsFound, Is.EqualTo(source));
+        }
     }
 }

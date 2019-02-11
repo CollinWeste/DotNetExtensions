@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Csv\CsvExtensions.cs" />
     <Compile Include="Csv\CsvFormat.cs" />
+    <Compile Include="Csv\ToCsv.cs" />
     <Compile Include="IEnumerable\Compare.cs" />
     <Compile Include="IEnumerable\ForEach.cs" />
     <Compile Include="IEnumerable\IsEmpty.cs" />
     <Compile Include="IEnumerable\IsNullEmpty.cs" />
-    <Compile Include="IEnumerable\RemoveEnd.cs" />
+    <Compile Include="IEnumerable\RemoveFromEnd.cs" />
     <Compile Include="Object\As.cs" />
     <Compile Include="Object\ConvertTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

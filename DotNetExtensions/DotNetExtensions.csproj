@@ -45,6 +45,7 @@
     <Compile Include="Csv\CsvFormat.cs" />
     <Compile Include="Csv\ToCsv.cs" />
     <Compile Include="IEnumerable\Compare.cs" />
+    <Compile Include="IEnumerable\Except.cs" />
     <Compile Include="IEnumerable\ForEach.cs" />
     <Compile Include="IEnumerable\IsEmpty.cs" />
     <Compile Include="IEnumerable\IsNullEmpty.cs" />

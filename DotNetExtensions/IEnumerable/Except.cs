@@ -11,17 +11,18 @@ namespace DotNetExtensions.IEnumerable
     public static partial class IEnumerableExtensions
     {
         /// <summary>
-        /// Determines whether the enumerable is empty.
+        /// Returns an enumerable without the specified item.
         /// </summary>
         /// <typeparam name="T">The source type.</typeparam>
         /// <param name="source">The source enumerable.</param>
-        /// <returns>True if the enumerable is empty; else false.</returns>
+        /// <param name="item">The item to exclude.</param>
+        /// <returns>The enumerable without the specified item.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="source"/> is null.</exception>
-        public static bool IsEmpty<T>(this IEnumerable<T> source)
+        public static IEnumerable<T> Except<T>(this IEnumerable<T> source, T item)
         {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
 
-            return !source.Any();
+            return source.Except(new[] { item });
         }
     }
 }

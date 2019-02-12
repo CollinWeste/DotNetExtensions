@@ -51,6 +51,7 @@
     <Compile Include="IEnumerable\RemoveFromEnd.cs" />
     <Compile Include="Object\As.cs" />
     <Compile Include="Object\ConvertTo.cs" />
+    <Compile Include="Object\TryConvertTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Csv\ParseCsv.cs" />
   </ItemGroup>

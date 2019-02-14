@@ -67,6 +67,7 @@
     <Compile Include="IEnumerable\IsNullEmptyTests.cs" />
     <Compile Include="IEnumerable\RemoveFromEndTests.cs" />
     <Compile Include="Object\AsTests.cs" />
+    <Compile Include="Object\ConvertToTests.cs" />
     <Compile Include="Object\TryConvertToTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

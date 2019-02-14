@@ -22,6 +22,8 @@ namespace DotNetExtensions.Object
         /// <exception cref="ArgumentNullException"></exception>
         public static T ConvertTo<T>(this object obj)
         {
+            if (obj == null) { throw new ArgumentNullException(nameof(obj)); }
+
             return (T)Convert.ChangeType(obj, typeof(T));
         }
     }

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Csv\ParseCsvTests.cs" />
     <Compile Include="IEnumerable\CompareTests.cs" />
+    <Compile Include="IEnumerable\ExceptTests.cs" />
     <Compile Include="IEnumerable\ForEachTests.cs" />
     <Compile Include="IEnumerable\IsEmptyTests.cs" />
     <Compile Include="IEnumerable\IsNullEmptyTests.cs" />
